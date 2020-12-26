@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-complete-guide",
+  "version": "1.0.0",
+  "description": "Complete Node.js Guide",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UkJung/WebBasic_NodeJs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UkJung/WebBasic_NodeJs/issues"
+  },
+  "homepage": "https://github.com/UkJung/WebBasic_NodeJs#readme",
+  "dependencies": {
+    "install": "^0.13.0",
+    "npm": "^6.14.9",
+    "save-dev": "0.0.1-security"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

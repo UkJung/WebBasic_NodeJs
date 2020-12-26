@@ -8,7 +8,7 @@ const requestHandler = (req,res) => {
         res.setHeader('Content-Type', 'text/html'); //어떤 타입의 데이터를 response로 보낼지 Content-Type
         res.write('<html>');
         res.write('<head><title>My First Page </title><head>');
-        res.write('<bode><form action="/message" method="POST"><input type="text" name="message"><button type="submit></button></form></body>');
+        res.write('<bode><form action="/message" method="POST"><input type="text" name="message"><button type="submit"></button></form></body>');
         res.write('</html>');
         return res.end();
     }
@@ -19,7 +19,7 @@ const requestHandler = (req,res) => {
             body.push(chunk);
         });
     
-        req.on('end', () => { //event listner to be executed.
+        return req.on('end', () => { //event listner to be executed.
             const parseBody = Buffer.concat(body).toString();
             console.log(parseBody);
             const message = parseBody.split('=')[1];
@@ -34,11 +34,12 @@ const requestHandler = (req,res) => {
         //처음 여기 flow를 타면 먼저 event handler들을 register해주고 밑에 코드가 실행됨 
     }
     
-    // res.setHeader('Content-Type', 'text/html'); //어떤 타입의 데이터를 response로 보낼지 Content-Type
-    // res.write('<html>');
-    // res.write('<head><title>My First Page </title><head>');
-    // res.write('<bode><h1>Hello from my Node.Js server!</h1></body>');
-    // res.end();
+    res.setHeader('Content-Type', 'text/html'); //어떤 타입의 데이터를 response로 보낼지 Content-Type
+    res.write('<html>');
+    res.write('<head><title>My First Page </title><head>');
+    res.write('<bode><h1>Hello from my Node.Js server!</h1></body>');
+    res.write('</html>');
+    res.end();
 }
 
 module.exports = requestHandler; //module.exports에 모든지 register할수있음.
